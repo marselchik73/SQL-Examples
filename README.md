@@ -54,7 +54,7 @@ DELETE FROM bookings WHERE name = 'Тестовый Клиент';
 
  1. Создайте базу данных
 
-Подключитесь к MySQL (в терминале):
+Подключитесь к MySQL (bash):
    
 mysql -u root -p
 
@@ -63,15 +63,15 @@ mysql -u root -p
 CREATE DATABASE booking_db;
 
  2. Импортируйте структуру таблицы
-  Перейдите в папку проекта (где находятся папка sql и файл sample_data.sql) и выполните (в терминале):
+  Перейдите в папку проекта (где находятся папка sql и файл sample_data.sql) и выполните (bash):
 
 mysql -u root -p booking_db < sql/01_create_table.sql
 
- 3. Заполните таблицу тестовыми данными (в терминале):
+ 3. Заполните таблицу тестовыми данными (bash):
 
 mysql -u root -p booking_db < sample_data.sql
 
- 4. Подключитесь к базе (в терминале):
+ 4. Подключитесь к базе (bash):
 
 mysql -u root -p booking_db
 
