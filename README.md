@@ -49,7 +49,8 @@ DELETE FROM bookings WHERE name = 'Тестовый Клиент';
 
 Как проверить работоспособность SQL-запросов
 
-Если вы хотите выполнить эти запросы на своей машине, выполните следующие шаги (потребуется установленная MySQL).
+Если вы хотите выполнить эти запросы на своей машине, выполните следующие шаги 
+(потребуется установленная MySQL):
 
  1. Создайте базу данных
 
@@ -73,15 +74,4 @@ mysql -u root -p booking_db
 SELECT * FROM bookings;
 
 После этого вы увидите три тестовые записи и сможете экспериментировать с другими запросами.
-
-CREATE DATABASE booking_db;                             -- 1. Создаётся база данных
-
-mysql -u root -p booking_db < sql/01_create_table.sql   -- 2. Импорт в базу booking_db (внутри файла 01_create_table.sql написано CREATE TABLE bookings...)
-
-mysql -u root -p booking_db < sample_data.sql           -- 3. Импорт данных в ту же базу
-
-mysql -u root -p booking_db                             -- 4. Подключение к базе booking_db
-
-SELECT * FROM bookings;                                 -- 5. Запрос к таблице bookings внутри базы booking_db
-
 
