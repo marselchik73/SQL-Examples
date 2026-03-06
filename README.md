@@ -46,3 +46,33 @@ SELECT name, booking_date FROM bookings ORDER BY booking_date DESC LIMIT 2;
 UPDATE bookings SET status = 'confirmed' WHERE name = 'Петр Сидоров';
 INSERT INTO bookings (name, email, phone, status) VALUES ('Тестовый Клиент', 'test@mail.com', '+7-900-000-00-00', 'pending');
 DELETE FROM bookings WHERE name = 'Тестовый Клиент';
+
+## Как проверить работоспособность SQL-запросов
+
+Если вы хотите выполнить эти запросы на своей машине, выполните следующие шаги (потребуется установленная MySQL).
+
+### 1. Создайте базу данных
+```sql
+CREATE DATABASE booking_db;
+
+### 2. Импортируйте структуру таблицы
+Перейдите в папку проекта (где находятся папка sql и файл sample_data.sql) и выполните:
+
+mysql -u root -p booking_db < sql/01_create_table.sql
+
+### 3. Заполните таблицу тестовыми данными
+
+mysql -u root -p booking_db < sample_data.sql
+
+### 4. Подключитесь к базе и проверьте
+
+mysql -u root -p booking_db
+
+### 5. Затем выполните любой запрос из списка выше, например:
+
+```sql
+SELECT * FROM bookings;
+
+### После этого вы увидите три тестовые записи и сможете экспериментировать с другими запросами.
+
+
